@@ -1,0 +1,235 @@
+body{
+    background: linear-gradient(#44929e , #000000);
+    font-family: 'Urbanist', sans-serif;
+
+}
+
+img{
+    width:100%;
+}
+
+.bullet{
+list-style-type: none;
+}
+
+.logo{
+   margin: auto;
+   width: 20%;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+
+.genero{
+    list-style: none;
+    list-style-type: none;
+}
+
+.menu{
+    text-align: right;
+    font-size: 22px;
+    color: white;
+}
+
+header article{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer{
+    color: white;
+    display: flex; justify-content: center;
+    font-family: 20px;
+}
+
+.letrablanca{
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.atributoflex{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.atributoflex2{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.atributoflex3{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.heart{
+    width: 20px;
+    
+}
+
+.atributoflex h1{
+    width: 100%;
+}
+
+.atributoflex article{
+    width: 18%;
+}
+
+.atributoflex2 h1{
+    width: 100%;
+}
+
+.atributoflex2 article{
+    width: 18%;
+}
+
+.atributoflex3 h1{
+    width: 100%;
+}
+
+.atributoflex3 article{
+    width: 18%;
+}
+
+.foto{
+    width: 90%;
+    min-height: 30vh;    
+}
+
+.generoletra{
+    font-size: 30px;
+    
+}
+
+section h2 {
+    font-size: 28px;
+}
+
+
+.genrie{
+    padding-top: 65px;
+}
+
+.botonenviar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.atributoflexdetail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.atributoflexdetail div img{
+    width: 30%;
+}
+.atributoflexdetail div li {
+    width: 50%;
+    flex-direction: row;
+}
+
+.atributoflexgenries h2{
+    width: 100%;
+}
+.atributoflexgenries article{
+    width:25%;
+}
+.atributoflexgenries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.atributoflexgenries2 h2{
+    width: 100%;
+}
+.atributoflexgenries2 article{
+    width:25%;
+}
+.atributoflexgenries2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.result-titulo{
+    width: 100%;
+}
+
+.peliculas_home {
+    width: 18%;
+    text-align: center; 
+    padding: 2%; 
+}
+.peliculas_home img {
+    width: 100%;
+    border-radius: 50%;
+}
+h3{
+    width: 100%;
+}
+.atributoflex2 h3{
+    width: 100%;
+}
+
+.logofooter img{
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+@media (max-width:420px){
+
+.atributoflex article{
+    width: 49.7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.atributoflex2 article {
+    width: 49.7%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.atributoflex3 article{
+    width: 49.7%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.menu{
+
+text-align: center;
+
+}
+header article{
+    flex-direction: column;
+}
+
+.buscador{
+    display: none;
+}
+    
+.Responsivetext ul{
+    list-style-type: none;
+    text-decoration: none;
+    padding-left: 1px;
+}
+.responsiveformulario{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+}
