@@ -1,20 +1,26 @@
 import React from "react";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import Favoritos from './components/Navbar/Favoritos'
+import VerMas from './components/Navbar/VerMas'
 
 function App() {
     
 
-let menu = [
-    'Home',
-    'Favoritos',
-    'Ver Todas',
-]
+
 
 return(
     <React.Fragment>
-        <Navbar elementosMenu={menu}/>
+        <Navbar />
+       
+        <Switch>
+        <Route  exact = {true} path='/'>  </Route>
+        <Route path='/Favoritos' comnponent = {Favoritos}>  </Route>
+        <Route path='/VerMas' comnponent = {VerMas}>  </Route>
+        </Switch>
+
         
         <Footer/>
     </React.Fragment>

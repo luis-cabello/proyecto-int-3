@@ -1,14 +1,14 @@
 import React from 'react';
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 
-function Navbar(props){
+function Navbar(){
 
     return (
         <nav>
             <ul className="main-nav">
-                { 
-                    props.elementosMenu.map((unMenu, idx)=> <li>{unMenu}</li>)
-                    
-                }
+              <Link exact = {true} to= '/' className='letrablanca'> Home </Link>
+              <Link to = '/favoritos' className='letrablanca'> Favoritos </Link>
+              <Link to = '/VerMas' className='letrablanca' > Ver Mas </Link>
             </ul>
             <ul className="user">
                 <li>Nombre usuario <img src="./img/user.jpg" alt=""/></li>
