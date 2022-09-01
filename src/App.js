@@ -1,10 +1,11 @@
 import React from "react";
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import Favoritos from './components/Navbar/Favoritos'
-import VerMas from './components/Navbar/VerMas'
+import Favoritos from './components/Navbar/Favoritos';
+import VerMas from './components/Navbar/VerMas';
+import Pelicula from "./components/Peliculas/Peliculas";
 
 function App() {
     
@@ -20,6 +21,8 @@ return(
         <Route path='/Favoritos' comnponent = {Favoritos}>  </Route>
         <Route path='/VerMas' comnponent = {VerMas}>  </Route>
         </Switch>
+        
+        <Pelicula/>
 
         
         <Footer/>
