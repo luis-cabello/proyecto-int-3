@@ -7,6 +7,7 @@ import Favoritos from './components/Navbar/Favoritos';
 import VerMas from './components/Navbar/VerMas';
 import Pelicula from "./components/Peliculas/Peliculas";
 import Series from "./components/Series/Series";
+import Header from "./components/Header/Header";
 
 function App() {
     
@@ -16,7 +17,7 @@ function App() {
 return(
     <React.Fragment>
         <Navbar />
-       
+        <Header/>
         <Switch>
         <Route  exact = {true} path='/'>  </Route>
         <Route path='/Favoritos' comnponent = {Favoritos}>  </Route>

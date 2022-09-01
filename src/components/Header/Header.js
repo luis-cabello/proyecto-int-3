@@ -10,11 +10,11 @@ class Header extends Component{
 
     render(){
         return(
-            <>
-                <section>
-                 
+            <React.Fragment>
+                <section className="Header">
+                  <h1>Vmovies</h1>
                 </section>
-            </>
+            </React.Fragment>
         )
             
     }

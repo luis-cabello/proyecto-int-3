@@ -8,6 +8,14 @@ body{
     font-size: 65px;
 
 }
+.Header{
+    font-size: 75px;
+    background-image: url(./BackgroundIMG.webp);
+    width: 100%;
+}
+.Header h1{
+    color: #fff;
+}
 img{
     width:100%;
 }
@@ -189,7 +197,13 @@ h3{
     margin-left: 20px;
 
 }
-
+.Navegador{
+    color: #fff;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
 nav{
     display: flex;
     flex-direction: row;
