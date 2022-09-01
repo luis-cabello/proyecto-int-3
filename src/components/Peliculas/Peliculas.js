@@ -26,7 +26,7 @@ class Pelicula extends Component {
                     <h2>Movies</h2>
                 </div>
                 <section className='card-container'>
-                    {this.state.data.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} name={unPelicula.title} image={unPelicula.poster_path}/>)}
+                    {this.state.data.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
                 </section>
             </React.Fragment>
         )
