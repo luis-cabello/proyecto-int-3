@@ -3,7 +3,11 @@ body{
     font-family: 'Urbanist', sans-serif;
 
 }
+.TituloC{
+    color: white;
+    font-size: 65px;
 
+}
 img{
     width:100%;
 }

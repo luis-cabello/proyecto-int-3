@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Favoritos from './components/Navbar/Favoritos';
 import VerMas from './components/Navbar/VerMas';
 import Pelicula from "./components/Peliculas/Peliculas";
+import Series from "./components/Series/Series";
 
 function App() {
     
@@ -23,6 +24,7 @@ return(
         </Switch>
         
         <Pelicula/>
+        <Series/>
 
         
         <Footer/>
