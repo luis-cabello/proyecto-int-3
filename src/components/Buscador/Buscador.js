@@ -8,23 +8,23 @@ class Buscador extends Component{
         }
     }
 
+    evitarSubmit(event){
+        event.preventDefault();
+    }
 
-
-
-
-
+    controlarCambios(event){
+        this.setState({value:event.target.value});
+    }
 
 render(){
     return(
-        <form> 
-
+        <form className="Buscador" onSubmit={(event)=> this.evitarSubmit(event)}> 
+        <label></label>
+        <input type= "search" onChange={(event)=> this.controlarCambios(event)} value={this.state.value}/>
+        <input type="submit" value="Submit"/>
         </form>
     )
 }
-
-
-
-
 
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Buscador from '../Buscador/Buscador';
 
 function Navbar(){
 
@@ -11,9 +12,7 @@ function Navbar(){
               <Link to = '/favoritos' className='letrablanca'> Favoritos </Link>
               <Link to = '/VerMas' className='letrablanca' > Ver Mas </Link>
             </ul>
-            <ul className="user">
-                <li>Nombre usuario <img src="./img/user.jpg" alt=""/></li>
-            </ul>
+             <Buscador/>
         </nav>
     )
 }
