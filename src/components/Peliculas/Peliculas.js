@@ -10,7 +10,7 @@ class Pelicula extends Component {
         }
     }
 
-    componentDidMount( ){
+    componentDidMount(){
         fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=7a176cc95147be6e695be2faf0e8ff9c")
         .then(response =>response.json())
         .then(data => this.setState(
