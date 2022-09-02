@@ -13,7 +13,7 @@ class  PeliculaCard extends Component{
         <article className='character-card'>
             <h2>{this.props.title}</h2>  
             <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""/>
-            <p className='more'>Ver más</p>               
+            <p className='more'>Detalle</p>               
         </article>
            
         )
