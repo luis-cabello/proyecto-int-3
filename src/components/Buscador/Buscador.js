@@ -16,12 +16,17 @@ class Buscador extends Component{
         this.setState({value:event.target.value});
     }
 
+    filtrarPeliculas(){
+
+    }
+
+
+
 render(){
     return(
         <form className="Buscador" onSubmit={(event)=> this.evitarSubmit(event)}> 
-        <label></label>
         <input type= "search" onChange={(event)=> this.controlarCambios(event)} value={this.state.value}/>
-        <input type="submit" value="Submit"/>
+        <input type="submit" />
         </form>
     )
 }
