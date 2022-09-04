@@ -10,6 +10,7 @@ import Series from "./components/Series/Series";
 import Header from "./components/Header/Header";
 import Error404 from './components/Error404/Error404'
 import TodasPeliculas from './components/TodasPeliculas/TodasPeliculas'
+import detallePelicula from "./components/DetallePelicula/DetallePelicula";
 
 
 function App() {
@@ -27,14 +28,16 @@ return(
 
         <Route path='/VerMas' component = {VerMas}/> 
 
-        <Route path= "" component = {Error404}/>
-
         <Route path = '/TodasPeliculas' component = {TodasPeliculas} />
+
+        <Route path= '/pelicula/id/:id' component={detallePelicula} />
+
+        <Route path= "" component = {Error404}/>
 
         </Switch>
 
         <Pelicula/>
-         <Series/>
+        <Series/>
         
         
         <Footer/>
