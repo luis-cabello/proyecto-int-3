@@ -10,24 +10,37 @@ class detallePelicula extends Component{
     constructor(props){
         super(props);
         this.state ={
-            value:""
+            id: this.props.match.params.id,
+            dataPelicula: {}
         }
-        console.log(props);
+    }
+
+    componentDidMount(){
+        // const id = this.props.match.params.id
+        fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=7a176cc95147be6e695be2faf0e8ff9c`)
+        .then(response => response.json())
+        .then(data => this.setState(
+            {dataPelicula: data}
+        ))
+        .catch(error => console.log('el error fue '+ error ))
+            
+        
+        //https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
     }
 
     render(){
-        
+        console.log(this.state.dataPelicula);
         return(
             <React.Fragment>
                 <article className='character-card'>
-                <h2>{this.props.title}</h2>
-                <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""/>
+                <h2 className="letrablanca">{this.state.dataPelicula.title}</h2>
+                <img src={`https://image.tmdb.org/t/p/w342/${this.state.dataPelicula.poster_path}`} alt=""/>
                 </article>
                 <article>
-                    <p>{this.props.data.overview}</p>
-                    <p>{this.props.data.vote_average}</p>
-                    <p>{this.props.data.release_date}</p>
-                    <p>{this.props.data.genre_ids}</p>
+                    <p className="letrablanca">{this.state.dataPelicula.overview}</p>
+                    <p className="letrablanca">{this.state.dataPelicula.vote_average}</p>
+                    <p className="letrablanca">{this.state.dataPelicula.release_date}</p>
+                    <p className="letrablanca">{this.state.dataPelicula.genre_ids}</p>
                     <button></button>
                 </article>
             </React.Fragment>

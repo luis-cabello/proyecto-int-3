@@ -5,7 +5,7 @@ class PeliculaCard extends Component{
     constructor(props){
         super(props);
         this.state ={
-            value:""
+            favsMessage: 'Agregar a favoritos'
         }
     }
 
@@ -21,10 +21,15 @@ agregarYQuitarDeFavoritos(id){
     }
 
     if(favoritos.includes(id)){
-        let idSacar = favoritos.indexOf(id)
-        favoritos.splice(idSacar, 1)
+    favoritos = favoritos.filter(unId => unId !== id)
+    this.setState ({
+        favsMessage: 'Quitar de favoritos'
+    })
     } else {
         favoritos.push(id);
+        this.setState ({
+            favsMessage: 'Agregar a favoritos'
+        })
     }
 
     let favsAsString = JSON.stringify(favoritos);
@@ -37,14 +42,13 @@ agregarYQuitarDeFavoritos(id){
         console.log(this.props);
         return(
         <article className='character-card'>
-            <p onClick={()=>this.agregarYQuitarDeFavoritos(this.props.data.id)}> Agregar a favoritos </p>
+            <p onClick={()=>this.agregarYQuitarDeFavoritos(this.props.data.id)}> {this.state.favsMessage} </p>
             <h2>{this.props.title}</h2>  
             <Link to={`/pelicula/id/${this.props.data.id}`}>
             <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""/>
             </Link>
             <p className='more'>Detalle</p>               
         </article>
-           
         )
     }
 } 
