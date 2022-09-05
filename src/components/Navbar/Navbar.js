@@ -9,7 +9,9 @@ function Navbar(){
         <nav>
             <h2>Vmovies</h2>
             <ul className="main-nav"> 
-              <Link exact = {true} to= '/' className='letrablanca'> Home </Link>
+              <Link exact = {true} to= '/' className='letrablanca'> </Link>
+
+              <Link to= '/Home' className='letrablanca'> Home </Link>
               
               <Link to = '/Favoritos' className='letrablanca'> Favoritos </Link>
               

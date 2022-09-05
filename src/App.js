@@ -5,12 +5,12 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Favoritos from './components/Navbar/Favoritos'
 import VerMas from './components/Navbar/VerMas';
-import Pelicula from "./components/Peliculas/Peliculas";
-import Series from "./components/Series/Series";
 import Header from "./components/Header/Header";
 import Error404 from './components/Error404/Error404'
 import TodasPeliculas from './components/TodasPeliculas/TodasPeliculas'
 import detallePelicula from "./components/DetallePelicula/DetallePelicula";
+import Home from "./components/Navbar/Home";
+import TodasSeries from "./components/TodasSeries/TodasSeries";
 
 
 function App() {
@@ -28,17 +28,17 @@ return(
 
         <Route path='/VerMas' component = {VerMas}/> 
 
+        <Route path = '/Home' component = {Home}/>
+
         <Route path = '/TodasPeliculas' component = {TodasPeliculas} />
 
         <Route path= '/pelicula/id/:id' component={detallePelicula} />
 
+        <Route path = '/TodasSeries' component={TodasSeries}/>
+
         <Route path= "" component = {Error404}/>
 
         </Switch>
-
-        <Pelicula/>
-        <Series/>
-        
         
         <Footer/>
     </React.Fragment>
