@@ -3,13 +3,13 @@ import { Route, Switch } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import Favoritos from './components/Navbar/Favoritos'
+import Favoritos from './components/Navbar/Favoritos';
 import VerMas from './components/Navbar/VerMas';
 import Header from "./components/Header/Header";
 import Error404 from './components/Error404/Error404'
 import TodasPeliculas from './components/TodasPeliculas/TodasPeliculas'
 import detallePelicula from "./components/DetallePelicula/DetallePelicula";
-import Home from "./components/Navbar/Home";
+import Home from "./components/Home/Home";
 import TodasSeries from "./components/TodasSeries/TodasSeries";
 
 

@@ -15,8 +15,6 @@ function Navbar(){
               
               <Link to = '/Favoritos' className='letrablanca'> Favoritos </Link>
               
-              <Link to = '/VerMas' className='letrablanca' > Ver Mas </Link>
-              
               <Link to = '/TodasPeliculas' className='letrablanca' > Todas las Movies </Link>
 
               <Link to = '/TodasSeries' className='letrablanca' > Todas las Series </Link>
