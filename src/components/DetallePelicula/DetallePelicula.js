@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Link} from 'react-router-dom';
+
 //Todo
 //1) Transformar el componente en un componente con estado.
 //2) Recuperar el id de la ruta.
@@ -29,7 +29,6 @@ class detallePelicula extends Component{
     }
 
     render(){
-        console.log(this.state.dataPelicula);
         return(
             <React.Fragment>
                 <article className='character-card'>
