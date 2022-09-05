@@ -11,6 +11,7 @@ import TodasPeliculas from './components/TodasPeliculas/TodasPeliculas'
 import detallePelicula from "./components/DetallePelicula/DetallePelicula";
 import Home from "./components/Home/Home";
 import TodasSeries from "./components/TodasSeries/TodasSeries";
+import detalleSerie from "./components/DetalleSeries/DetalleSeries";
 
 
 function App() {
@@ -33,6 +34,8 @@ return(
         <Route path= '/pelicula/id/:id' component={detallePelicula} />
 
         <Route path = '/TodasSeries' component={TodasSeries}/>
+
+        <Route path= '/serie/id/:id' component={detalleSerie} />
 
         <Route path= "" component = {Error404}/>
 
