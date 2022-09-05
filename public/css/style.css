@@ -227,6 +227,10 @@ nav ul {
     align-items: center;
 }
 
+.main-nav {
+    gap: 12px
+}
+
 .main-nav li,
 .user li {
     margin: 0 10px;

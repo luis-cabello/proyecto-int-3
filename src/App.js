@@ -22,13 +22,11 @@ return(
 
         <Switch>
 
-        <Route  exact = {true} path='/'/> 
+        <Route path = '/' exact = {true} component = {Home}/>
 
         <Route path='/Favoritos' component = {Favoritos}/> 
 
         <Route path='/VerMas' component = {VerMas}/> 
-
-        <Route path = '/Home' component = {Home}/>
 
         <Route path = '/TodasPeliculas' component = {TodasPeliculas} />
 

@@ -11,7 +11,7 @@ function Navbar(){
             <ul className="main-nav"> 
               <Link exact = {true} to= '/' className='letrablanca'> </Link>
 
-              <Link to= '/Home' className='letrablanca'> Home </Link>
+              <Link to= '/' className='letrablanca'> Home </Link>
               
               <Link to = '/Favoritos' className='letrablanca'> Favoritos </Link>
               
