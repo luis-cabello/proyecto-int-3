@@ -6,7 +6,7 @@ class TodasPeliculas extends Component {
     constructor(props){
         super(props);
         this.state ={
-            dataPeliculas:[]
+            dataPeliculas:[],
         }
     }
 
@@ -27,6 +27,7 @@ class TodasPeliculas extends Component {
                 </div>
                 <section className='card-container'>
                     {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
+                    {/* nuevo estado de favoritos con la info de localstorage */}
                 </section>
             </React.Fragment>
         )
