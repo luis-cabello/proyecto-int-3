@@ -5,10 +5,21 @@ class SerieCard extends Component{
     constructor(props){
         super(props);
         this.state ={
-            favsMessage: 'Agregar a favoritos'
+            favsMessage: 'Agregar a favoritos',
+            verMas: 'hide',
         }
     }
-
+    verMas(){
+        if(this.state.verMas === 'show'){
+          this.setState({
+            verMas:'hide'
+          })
+        } else {
+          this.setState({
+            verMas:'show'
+          })
+        }
+      }
 agregarYQuitarDeFavoritos(id){
     // Tiene que agregar un id dentro de un Array y guardarlo en localstorgae
     // Si el id ya existe ofrecer al usarlo la posibilidad de quitar el id del array de favoritos
@@ -46,8 +57,11 @@ agregarYQuitarDeFavoritos(id){
             <Link to={`/serie/id/${this.props.data.id}`}>
             <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""/>
             </Link>
-            <p className='more'>Detalle</p>      
-            <button className="button-54" onClick={() => this.agregarYQuitarDeFavoritos(this.props.data.id)}> {this.state.favsMessage} </button>         
+            <article className={this.state.verMas}>
+            <p className='more'>{this.props.descripcion}</p>  
+            </article>    
+            <button className="button-54" onClick={() => this.agregarYQuitarDeFavoritos(this.props.data.id)}> {this.state.favsMessage} </button> 
+            <button onClick={() => this.verMas()}>Ver más</button>        
         </article>
         )
     }

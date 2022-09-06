@@ -74,8 +74,8 @@ class PeliculaCard extends Component {
                 </Link>
                 <article className={this.state.verMas}>
                 <p className='more'>{this.props.descripcion}</p>
-                <button className="button-54" onClick={() => this.agregarYQuitarDeFavoritos(this.props.data.id)}> {this.state.favsMessage} </button>
                 </article>
+                <button className="button-54" onClick={() => this.agregarYQuitarDeFavoritos(this.props.data.id)}> {this.state.favsMessage} </button>
                 <button onClick={() => this.verMas()}>Ver más</button>
             </article>
         )
