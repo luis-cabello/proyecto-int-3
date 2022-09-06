@@ -37,12 +37,12 @@ class PeliculaCard extends Component {
         if (favoritos.includes(id)) { //Si el id que se encontro arriba esta incluido en el  Array
             favoritos = favoritos.filter(unId => unId !== id) // Agarra el array si matchea con el id que el usaurio eligio, se cambia el estado a Quitar 
             this.setState({
-                favsMessage: 'Quitar de favoritos'
+                favsMessage: 'Agregar a favoritos '
             })
         } else {
             favoritos.push(id); //Si no esta en el array se va a cambiar el estado a agregar. 
             this.setState({
-                favsMessage: 'Agregar a favoritos'
+                favsMessage: 'Quitar de favoritos'
             })
         }
 
