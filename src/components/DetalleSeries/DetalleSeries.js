@@ -32,17 +32,18 @@ class detalleSerie extends Component{
     render(){
         return(
             <React.Fragment>
+                <section className="Detalle">
                 <article className='character-card'>
                 <h2 className="letrablanca">{this.state.dataSerie.name}</h2>
                 <img src={`https://image.tmdb.org/t/p/w342/${this.state.dataSerie.poster_path}`} alt=""/>
                 </article>
-                <article>
+                <article className="DetalleDetail">
                     <p className="letrablanca">{this.state.dataSerie.overview}</p>
                     <p className="letrablanca">{this.state.dataSerie.vote_average}</p>
                     <p className="letrablanca">{this.state.dataSerie.release_date}</p>
                     <p className="letrablanca">{this.state.dataSerie.genre_ids}</p>
-                    <button></button>
                 </article>
+                </section>
             </React.Fragment>
         )
     }

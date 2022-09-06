@@ -5,9 +5,21 @@ class PeliculaCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            favsMessage: 'Agregar a favoritos'
+            favsMessage: 'Agregar a favoritos',
+            verMas: 'hide',
         }
     }
+    verMas(){
+        if(this.state.verMas === 'show'){
+          this.setState({
+            verMas:'hide'
+          })
+        } else {
+          this.setState({
+            verMas:'show'
+          })
+        }
+      }
 
     componentDidMount(){
         let recuperoStorage = localStorage.getItem('favoritos');
@@ -56,13 +68,17 @@ class PeliculaCard extends Component {
         return (
             <article className='character-card'>
 
-                <button className="button-54" onClick={() => this.agregarYQuitarDeFavoritos(this.props.data.id)}> {this.state.favsMessage} </button>
+                
 
                 <h2>{this.props.title}</h2>
                 <Link to={`/pelicula/id/${this.props.data.id}`}>
                     <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt="" />
                 </Link>
+                <article className={this.state.verMas}>
                 <p className='more'>Detalle</p>
+                <button className="button-54" onClick={() => this.agregarYQuitarDeFavoritos(this.props.data.id)}> {this.state.favsMessage} </button>
+                </article>
+                <button onClick={() => this.verMas()}>Ver más</button>
             </article>
         )
     }

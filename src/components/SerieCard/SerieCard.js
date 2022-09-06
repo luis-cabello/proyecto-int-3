@@ -41,12 +41,13 @@ agregarYQuitarDeFavoritos(id){
     render(){
         return(
         <article className='character-card'>
-           <button className="button-54" onClick={() => this.agregarYQuitarDeFavoritos(this.props.data.id)}> {this.state.favsMessage} </button> 
+            
             <h2>{this.props.title}</h2>  
             <Link to={`/serie/id/${this.props.data.id}`}>
             <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""/>
             </Link>
-            <p className='more'>Detalle</p>               
+            <p className='more'>Detalle</p>      
+            <button className="button-54" onClick={() => this.agregarYQuitarDeFavoritos(this.props.data.id)}> {this.state.favsMessage} </button>         
         </article>
         )
     }
