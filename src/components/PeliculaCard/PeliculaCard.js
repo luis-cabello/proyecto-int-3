@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import detallePelicula from "../DetallePelicula/DetallePelicula";
 
 class PeliculaCard extends Component {
     constructor(props) {
@@ -30,9 +31,6 @@ class PeliculaCard extends Component {
                 favsMessage: 'Quitar de favoritos'
             })
         }
-
-
-
     }
 
     agregarYQuitarDeFavoritos(id) {
@@ -75,7 +73,7 @@ class PeliculaCard extends Component {
                     <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt="" />
                 </Link>
                 <article className={this.state.verMas}>
-                <p className='more'>Detalle</p>
+                <p className='more'>{this.props.descripcion}</p>
                 <button className="button-54" onClick={() => this.agregarYQuitarDeFavoritos(this.props.data.id)}> {this.state.favsMessage} </button>
                 </article>
                 <button onClick={() => this.verMas()}>Ver más</button>

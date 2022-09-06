@@ -38,7 +38,7 @@ class Home extends Component {
                     <h2 className="TituloC">Movies</h2>
                 </div>
                 <section className='card-container'>
-                    {this.state.dataPelicula.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
+                    {this.state.dataPelicula.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title} descripcion={unPelicula.overview}/>)}
                 </section>
 
 
