@@ -3,8 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import Favoritos from './components/Navbar/Favoritos';
-import VerMas from './components/Navbar/VerMas';
+import Favoritos from './components/Favoritos/Favoritos';
 import Header from "./components/Header/Header";
 import Error404 from './components/Error404/Error404'
 import TodasPeliculas from './components/TodasPeliculas/TodasPeliculas'
@@ -26,8 +25,6 @@ return(
         <Route path = '/' exact = {true} component = {Home}/>
 
         <Route path='/Favoritos' component = {Favoritos}/> 
-
-        <Route path='/VerMas' component = {VerMas}/> 
 
         <Route path = '/TodasPeliculas' component = {TodasPeliculas} />
 

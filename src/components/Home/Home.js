@@ -17,9 +17,14 @@ class Home extends Component {
         fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=7a176cc95147be6e695be2faf0e8ff9c")
             .then(response => response.json())
             .then(data => this.setState(
-                { dataPelicula: data.results }
+                
+                { dataPelicula: data.results} 
+                  // nextUrl: dataPelicula.info.next} 
             ))
             .catch(error => console.log('el error fue ' + error))
+
+           
+            
 
         //Mejores Series
 
@@ -30,6 +35,18 @@ class Home extends Component {
             ))
             .catch(error => console.log('el error fue ' + error))
     }
+    
+ //   traerMas(){
+       // fetch(this.state.nextUrl)
+  //      .then(response => response.json())
+   //    .then(data => this.setState({
+    //        data: data.concat(this.state.dataPelicula),
+     //       nextUrl: dataPelicula.info.next
+     //   })
+     //   .catch(error => console.log('el error fue ' + error))
+        
+  //      )
+    //}
     render(){
         return(
 
@@ -40,6 +57,7 @@ class Home extends Component {
                 <section className='card-container'>
                     {this.state.dataPelicula.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title} descripcion={unPelicula.overview}/>)}
                 </section>
+              
 
 
 
