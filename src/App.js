@@ -11,6 +11,7 @@ import detallePelicula from "./components/DetallePelicula/DetallePelicula";
 import Home from "./components/Home/Home";
 import TodasSeries from "./components/TodasSeries/TodasSeries";
 import detalleSerie from "./components/DetalleSeries/DetalleSeries";
+import VerTodas from './components/VerTodas/VerTodas'
 
 
 function App() {
@@ -22,7 +23,7 @@ return(
 
         <Switch>
 
-        <Route path = '/' exact = {true} component = {Home}/>
+        <Route path = '/' exact  component = {Home}/>
 
         <Route path='/Favoritos' component = {Favoritos}/> 
 
@@ -33,6 +34,8 @@ return(
         <Route path = '/TodasSeries' component={TodasSeries}/>
 
         <Route path= '/serie/id/:id' component={detalleSerie} />
+
+        <Route path = '/VerTodas' component = {VerTodas} />
 
         <Route path= "" component = {Error404}/>
 

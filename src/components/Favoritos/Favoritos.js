@@ -22,6 +22,7 @@ class Favoritos extends Component {
         // this . set state data peliculas recuperstorage
         let recuperoStorage = localStorage.getItem('favoritos')
         let moviesArray = []
+        let peliculaFavs = []
     
 
         if (recuperoStorage !== null) { //Si hay algo disinto de null osea hay algo en favoritos
@@ -34,11 +35,11 @@ class Favoritos extends Component {
                 fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=7a176cc95147be6e695be2faf0e8ff9c`)
                 .then(response =>response.json())
                 .then(data => {
-                    moviesArray.push(data);
+                    peliculaFavs.push(data);
                     console.log(this.state.dataPeliculas.length);
                     //for each ids
                     //data adentro array
-                    this.setState({dataPeliculas: moviesArray});            
+                    this.setState({dataPeliculas: peliculaFavs});            
             })
                 .catch(error => console.log('el error fue '+ error ))
                 });

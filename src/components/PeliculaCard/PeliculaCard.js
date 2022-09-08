@@ -26,11 +26,14 @@ class PeliculaCard extends Component {
         let recuperoStorage = localStorage.getItem('favoritos');
         let favoritos = JSON.parse(recuperoStorage);
 
-        if (favoritos.includes(this.props.data.id)) {
-            this.setState({
-                favsMessage: 'Quitar de favoritos'
-            })
+        if (favoritos !== null ){
+            if (favoritos.includes(this.props.data.id)) {
+                this.setState({
+                    favsMessage: 'Quitar de favoritos'
+                })
+            }
         }
+
     }
 
     agregarYQuitarDeFavoritos(id) {
