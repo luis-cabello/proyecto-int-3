@@ -20,30 +20,31 @@ class Favoritos extends Component {
     componentDidMount(){
         //condicional recupera storage
         // this . set state data peliculas recuperstorage
-        let moviesArray = []
-        let favoritos = []
         let recuperoStorage = localStorage.getItem('favoritos')
+        let moviesArray = []
+    
 
         if (recuperoStorage !== null) { //Si hay algo disinto de null osea hay algo en favoritos
             let favoritosToArray = JSON.parse(recuperoStorage) // Devolvemelo y pasalo a JSON
-            favoritos = favoritosToArray //lo guardamos en el array 
+            moviesArray = favoritosToArray //lo guardamos en el array 
         }
-        if(favoritos !== null) {
-            favoritos.forEach(id => {
+        if( moviesArray !== null) {
+            moviesArray.forEach(id => {
             
                 fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=7a176cc95147be6e695be2faf0e8ff9c`)
                 .then(response =>response.json())
-                .then(data => moviesArray.push(data)
+                .then(data => {
+                    moviesArray.push(data);
+                    console.log(this.state.dataPeliculas.length);
                     //for each ids
                     //data adentro array
-                )
+                    this.setState({dataPeliculas: moviesArray});            
+            })
                 .catch(error => console.log('el error fue '+ error ))
                 });
         }
     
-        this.setState({
-        dataPeliculas: moviesArray
-        })
+        
         
 
     }
