@@ -8,6 +8,7 @@ class VerTodas extends Component {
         super(props);
         this.state = {
             dataPelicula: [],
+            nextUrl : '',
             dataSeries: [],
             backup: []
         }
@@ -20,7 +21,8 @@ class VerTodas extends Component {
             .then(response => response.json())
             .then(data => this.setState(
 
-                { dataPelicula: data.results }
+                { dataPelicula: data.results,
+                   nextUrl: data.next }
                 // nextUrl: dataPelicula.info.next} 
             ))
             .catch(error => console.log('el error fue ' + error))
@@ -39,17 +41,15 @@ class VerTodas extends Component {
 
 
     }
-
-    traerMas() {
+    traerMas(){
+        //Traer la siguiente página de personajes
         fetch(this.state.nextUrl)
-            .then(response => response.json())
-            .then(data => this.setState({
-                data: data.concat(this.state.dataPelicula),
-                nextUrl: dataPelicula.info.next
-            })
-                .catch(error => console.log('el error fue ' + error))
-
-            )
+            .then( res => res.json())
+            .then( data => this.setState({
+                dataPelicula: data.results.concat(this.state.dataPelicula),
+                nextUrl: data.next
+            }))
+            .catch()
     }
 
 
@@ -79,6 +79,7 @@ class VerTodas extends Component {
                 </div>
                 <section className='card-container'>
                     {this.state.dataPelicula.map((unPelicula, idx) => <PeliculaCard key={unPelicula + idx} data={unPelicula} image={unPelicula.poster_path} title={unPelicula.title} descripcion={unPelicula.overview} />)}
+                    <button className = 'button-54' onClick={()=>this.traerMas()}> Traer más </button>
                 </section>
 
 

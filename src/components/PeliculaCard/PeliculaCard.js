@@ -7,17 +7,17 @@ class PeliculaCard extends Component {
         super(props);
         this.state = {
             favsMessage: 'Agregar a favoritos',
-            verMas: 'hide',
+            verMas: 'Ver Mas',
         }
     }
     verMas(){
-        if(this.state.verMas === 'show'){
+        if(this.state.verMas === 'Ver Menos'){
           this.setState({
-            verMas:'hide'
+            verMas:'Ver Mas'
           })
         } else {
           this.setState({
-            verMas:'show'
+            verMas:'Ver Menos'
           })
         }
       }
@@ -79,7 +79,7 @@ class PeliculaCard extends Component {
                 <p className='more'>{this.props.descripcion}</p>
                 </article>
                 <button className="button-54" onClick={() => this.agregarYQuitarDeFavoritos(this.props.data.id)}> {this.state.favsMessage} </button>
-                <button className = 'button-54'onClick={() => this.verMas()}>Ver más</button>
+                <button className = 'button-54'onClick={() => this.verMas()}>{this.state.verMas}</button>
             </article>
         )
     }
