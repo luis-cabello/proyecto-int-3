@@ -22,7 +22,7 @@ function Navbar() {
 
                 <li> <Link to='/VerTodas' className='letrablanca' > Ver Todas </Link> </li>
             </ul>
-            <Buscador />
+            
         </nav>
     )
 }

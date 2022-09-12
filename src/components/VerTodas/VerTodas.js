@@ -12,7 +12,8 @@ class VerTodas extends Component {
             dataSeries: [],
             backup: [],
             backupSeries: [], 
-            datos: []
+            
+           
         }
     }
 
@@ -26,8 +27,8 @@ class VerTodas extends Component {
                 { dataPelicula: data.results,
                    nextUrl: data.page + 1,
                    backup: data.results,
-                datos: data }
-                // nextUrl: dataPelicula.info.next} 
+                 }
+                
             ))
             .catch(error => console.log('el error fue ' + error))
 
@@ -46,13 +47,25 @@ class VerTodas extends Component {
 
 
     }
-    traerMas(){
+    traerMasPeliculas(){
         //Traer la siguiente página de personajes
         
         fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=7a176cc95147be6e695be2faf0e8ff9c&language=en-US&page=${this.state.nextUrl}`)
         .then( res => res.json())
         .then( data => this.setState({
             dataPelicula: data.results.concat(this.state.dataPelicula),
+            nextUrl: data.page + 1
+        }))
+        .catch()
+    }
+
+    traerMasSeries(){
+        //Traer la siguiente página de personajes
+        
+        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=7a176cc95147be6e695be2faf0e8ff9c&language=en-US&page=${this.state.nextUrl}`)
+        .then( res => res.json())
+        .then( data => this.setState({
+            dataSeries: data.results.concat(this.state.dataSeries),
             nextUrl: data.page + 1
         }))
         .catch()
@@ -92,9 +105,11 @@ class VerTodas extends Component {
                     
                     <React.Fragment>
                 <div>
-                    <Filtro filtro={(nombre) => this.filtrarPelicula(nombre)} />
+                    
                     <h2 className="TituloC">Movies</h2>
-                    <button className = 'button-54' onClick={()=>this.traerMas()}> Traer más </button>
+                    <h3 className="letrablanca">Filtrar Peliculas </h3>
+                    <Filtro filtro={(nombre) => this.filtrarPelicula(nombre)} />
+                    <button className = 'button-54' onClick={()=>this.traerMasPeliculas()}> Traer más Peliculas </button>
                 </div>
                 <section className='card-container'>
                     {this.state.dataPelicula.map((unPelicula, idx) => <PeliculaCard key={unPelicula + idx} data={unPelicula} image={unPelicula.poster_path} title={unPelicula.title} descripcion={unPelicula.overview} />)}
@@ -104,8 +119,10 @@ class VerTodas extends Component {
 
 
                 <div>
-                <Filtro filtro={(nombre) => this.filtrarSeries(nombre)} />
                     <h2 className="TituloC">Series</h2>
+                    <h3 className="letrablanca">Filtrar Series</h3>
+                <Filtro filtro={(nombre) => this.filtrarSeries(nombre)} />
+                    <button className = 'button-54' onClick={()=>this.traerMasSeries()}> Traer más Series </button>
                 </div>
                 <section className='card-container'>
                     {this.state.dataSeries.map((unSeries, idx) => <SerieCard key={unSeries + idx} data={unSeries} image={unSeries.poster_path} title={unSeries.name} descripcion={unSeries.overview} />)}
