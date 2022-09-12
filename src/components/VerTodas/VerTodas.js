@@ -53,7 +53,7 @@ class VerTodas extends Component {
         .then( res => res.json())
         .then( data => this.setState({
             dataPelicula: data.results.concat(this.state.dataPelicula),
-            nextUrl: data.page
+            nextUrl: data.page + 1
         }))
         .catch()
     }
@@ -94,7 +94,7 @@ class VerTodas extends Component {
                 <div>
                     <Filtro filtro={(nombre) => this.filtrarPelicula(nombre)} />
                     <h2 className="TituloC">Movies</h2>
-                    <button className = 'button-54' onClick={()=>this.traerMas(this.state.nextUrl + 1)}> Traer más </button>
+                    <button className = 'button-54' onClick={()=>this.traerMas()}> Traer más </button>
                 </div>
                 <section className='card-container'>
                     {this.state.dataPelicula.map((unPelicula, idx) => <PeliculaCard key={unPelicula + idx} data={unPelicula} image={unPelicula.poster_path} title={unPelicula.title} descripcion={unPelicula.overview} />)}
