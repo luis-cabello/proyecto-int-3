@@ -22,7 +22,8 @@ class VerTodas extends Component {
             .then(data => this.setState(
 
                 { dataPelicula: data.results,
-                   nextUrl: data.next }
+                   nextUrl: data.next,
+                   backup: data.results }
                 // nextUrl: dataPelicula.info.next} 
             ))
             .catch(error => console.log('el error fue ' + error))
@@ -56,7 +57,7 @@ class VerTodas extends Component {
     filtrarPelicula(nombre) {
         let arrayFiltrado =
             this.state.backup.filter
-                (pelicula => pelicula.name.toLowerCase().includes(nombre.toLowerCase()))
+                (pelicula => pelicula.title.toLowerCase().includes(nombre.toLowerCase()))
 
         this.setState({
             dataPelicula: arrayFiltrado
