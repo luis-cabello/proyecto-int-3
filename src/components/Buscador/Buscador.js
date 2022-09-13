@@ -12,11 +12,12 @@ class Buscador extends Component{
     evitarSubmit(event){
         event.preventDefault();
         this.props.buscar()
+       
     
     }
 
-    cambioSerieButton(e) {
-        if(e.target.value === 'movie') {
+    cambioSerieButton(event) {
+        if(event.target.value === 'movie') {
             this.setState({
                 movie: true
             })
@@ -36,7 +37,7 @@ render(){
 
         <label className='radio-button'>Series</label>
         <input onChange={(event)=> this.cambioSerieButton(event)}  type="radio" name="media" value="serie" />
-        <button type="submit" > Buscar</button>
+        <button type="submit" className="button-54"  onChange={(e)=>this.props.buscar(e)}>  Buscar  </button>
         </form>
     )
 }

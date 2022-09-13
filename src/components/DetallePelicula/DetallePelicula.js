@@ -37,10 +37,10 @@ class detallePelicula extends Component{
                 <img src={`https://image.tmdb.org/t/p/w342/${this.state.dataPelicula.poster_path}`} alt=""/>
                 </article>
                 <article className="DetalleDetail">
-                    <p className="letrablanca">{this.state.dataPelicula.overview}</p>
-                    <p className="letrablanca">{this.state.dataPelicula.vote_average}</p>
-                    <p className="letrablanca">{this.state.dataPelicula.release_date}</p>
-                    <p className="letrablanca">{this.state.dataPelicula.genre_ids}</p>
+                    <p className="letrablanca"> Descripcion : {this.state.dataPelicula.overview}</p>
+                    <p className="letrablanca"> Voto promedio de los espectadores : {this.state.dataPelicula.vote_average}</p>
+                    <p className="letrablanca"> Fecha de lanzamiento : {this.state.dataPelicula.release_date}</p>
+                    <p className="letrablanca"> Genero : {this.state.dataPelicula.genre_ids}</p>
                 </article>
                 </section>
             </React.Fragment>

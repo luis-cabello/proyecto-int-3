@@ -38,10 +38,10 @@ class detalleSerie extends Component{
                 <img src={`https://image.tmdb.org/t/p/w342/${this.state.dataSerie.poster_path}`} alt=""/>
                 </article>
                 <article className="DetalleDetail">
-                    <p className="letrablanca">{this.state.dataSerie.overview}</p>
-                    <p className="letrablanca">{this.state.dataSerie.vote_average}</p>
-                    <p className="letrablanca">{this.state.dataSerie.release_date}</p>
-                    <p className="letrablanca">{this.state.dataSerie.genre_ids}</p>
+                    <p className="letrablanca"> Descripcion : {this.state.dataSerie.overview}</p>
+                    <p className="letrablanca"> Voto promedio de los espectadores : {this.state.dataSerie.vote_average}</p>
+                    <p className="letrablanca"> Fecha de lanzamiento : {this.state.dataSerie.release_date}</p>
+                    <p className="letrablanca"> Genero : {this.state.dataSerie.genre_ids}</p>
                 </article>
                 </section>
             </React.Fragment>

@@ -55,7 +55,7 @@ class Favoritos extends Component {
         return(
             <React.Fragment> 
                 <div>
-                    <h2 className="TituloC">Movies</h2>
+                    <h2 className="TituloC"> Favoritos </h2>
                 </div>
                 <section className='card-container'>
                     { this.state.dataPeliculas && this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
