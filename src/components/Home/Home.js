@@ -47,7 +47,7 @@ class Home extends Component {
             }))
             .catch(err => console.log(err))
         } else {
-            fetch( "https://api.themoviedb.org/3/search/tv?api_key=7a176cc95147be6e695be2faf0e8ff9c&language=en-US&page=1&include_adult=false")
+            fetch("https://api.themoviedb.org/3/search/tv?api_key=7a176cc95147be6e695be2faf0e8ff9c&language=en-US&page=1&include_adult=false")
             .then(res => res.json())
             .then(data => this.setState({
                 resultadosBusqueda : data.results

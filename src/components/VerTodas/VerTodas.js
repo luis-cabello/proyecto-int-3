@@ -74,8 +74,7 @@ class VerTodas extends Component {
     
     filtrarPelicula(nombre) {
         let arrayFiltrado =
-        this.state.backup.filter
-        (pelicula => pelicula.title.toLowerCase().includes(nombre.toLowerCase()))
+        this.state.backup.filter(pelicula => pelicula.title.toLowerCase().includes(nombre.toLowerCase()))
         
         this.setState({
             dataPelicula: arrayFiltrado
@@ -86,8 +85,7 @@ class VerTodas extends Component {
     
     filtrarSeries(nombre) {
         let arrayFiltrado =
-        this.state.backupSeries.filter
-                (serie => serie.name.toLowerCase().includes(nombre.toLowerCase()))
+        this.state.backupSeries.filter(serie => serie.name.toLowerCase().includes(nombre.toLowerCase()))
                 
                 this.setState({
                     dataSeries: arrayFiltrado
