@@ -6,7 +6,7 @@ class SerieCard extends Component{
         super(props);
         this.state ={
             favsMessage: 'Agregar a favoritos',
-            verMas: 'VerMass',
+            verMas: 'VerMas',
         }
     }
     verMas(){
