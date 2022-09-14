@@ -26,7 +26,7 @@ class TodasSeries extends Component {
                     <h2 className="TituloC">Series</h2>
                 </div>
                 <section className='card-container'>
-                    {this.state.dataSeries.map((unSeries, idx) => <SerieCard key={unSeries + idx} data={unSeries} image={unSeries.poster_path} title={unSeries.name} />)}
+                    {this.state.dataSeries.map((unSeries, idx) => <SerieCard key={unSeries + idx} data={unSeries} image={unSeries.poster_path} title={unSeries.name}descripcion={unSeries.overview}/>)}
                 </section>
             </React.Fragment>
         )

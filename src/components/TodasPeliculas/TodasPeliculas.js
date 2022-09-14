@@ -26,7 +26,7 @@ class TodasPeliculas extends Component {
                     <h2 className="TituloC">Movies</h2>
                 </div>
                 <section className='card-container'>
-                    {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title}/>)}
+                    {this.state.dataPeliculas.map((unPelicula, idx )=> <PeliculaCard key={unPelicula + idx} data={unPelicula}  image={unPelicula.poster_path} title={unPelicula.title} descripcion={unPelicula.overview}/>)}
                     {/* nuevo estado de favoritos con la info de localstorage */}
                 </section>
             </React.Fragment>
