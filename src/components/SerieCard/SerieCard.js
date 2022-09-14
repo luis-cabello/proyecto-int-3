@@ -6,20 +6,21 @@ class SerieCard extends Component{
         super(props);
         this.state ={
             favsMessage: 'Agregar a favoritos',
-            verMas: 'Ver Mas',
+            verMas: 'VerMass',
         }
     }
     verMas(){
-        if(this.state.verMas === 'Ver Mas'){
+        if(this.state.verMas === 'VerMas'){
           this.setState({
-            verMas:'Ver Menos'
+            verMas:'VerMenos'
           })
         } else {
           this.setState({
-            verMas:'Ver Mas'
+            verMas:'VerMas'
           })
         }
       }
+
 agregarYQuitarDeFavoritos(id){
     // Tiene que agregar un id dentro de un Array y guardarlo en localstorgae
     // Si el id ya existe ofrecer al usarlo la posibilidad de quitar el id del array de favoritos
@@ -48,17 +49,15 @@ agregarYQuitarDeFavoritos(id){
     console.log(localStorage);
 
 }
-
     render(){
         return(
         <article className='character-card'>
-            
-            <h2>{this.props.title}</h2>  
             <Link to={`/serie/id/${this.props.data.id}`}>
             <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""/>
             </Link>
             <article className={this.state.verMas}>
             <p className='more'>{this.props.descripcion}</p>  
+            <h2>{this.props.title}</h2>  
             </article>    
             <button className="button-54" onClick={() => this.agregarYQuitarDeFavoritos(this.props.data.id)}> {this.state.favsMessage} </button> 
             <button className="button-54" onClick={() => this.verMas()}>{this.state.verMas}</button>        
@@ -69,27 +68,3 @@ agregarYQuitarDeFavoritos(id){
 
 export default SerieCard;
 
-
-// import React, {Component} from "react";
-
-// class  SerieCard extends Component{
-//     constructor(props){
-//         super(props);
-//         this.state ={
-//             value:""
-//         }
-//     }
-
-//     render(){
-//         return(
-//         <article className='character-card'>
-//             <h2>{this.props.title}</h2>  
-//             <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""/>
-//             <p className='more'>Detalle</p>               
-//         </article>
-           
-//         )
-//     }
-// } 
-
-// export default SerieCard;
