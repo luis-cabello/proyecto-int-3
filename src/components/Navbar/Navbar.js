@@ -16,9 +16,9 @@ function Navbar() {
 
                 <li>  <Link to='/Favoritos' className='letrablanca'> Favoritos </Link></li>
 
-                <li><Link  to='/TodasPeliculas' className='letrablanca' > Todas las Peliculas </Link></li>
+                <li><Link  to='/TodasPeliculas' className='letrablanca' > Peliculas </Link></li>
 
-                <li> <Link to='/TodasSeries' className='letrablanca' > Todas las Series </Link> </li>
+                <li> <Link to='/TodasSeries' className='letrablanca' > Series </Link> </li>
 
                 <li> <Link to='/VerTodas' className='letrablanca' > Ver Todas </Link> </li>
             </ul>
