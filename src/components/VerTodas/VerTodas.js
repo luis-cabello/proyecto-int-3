@@ -101,11 +101,10 @@ class VerTodas extends Component {
                     
                     <React.Fragment>
                 <div>
-                    
                     <h2 className="TituloC">Movies</h2>
                     <h3 className="letrablanca">Filtrar Peliculas </h3>
                     <Filtro filtro={(nombre) => this.filtrarPelicula(nombre)} />
-                    <button className = 'button-54' onClick={()=>this.traerMasPeliculas()}> Traer más Peliculas </button>
+                    <button className = 'button-55' onClick={()=>this.traerMasPeliculas()}> Traer más Peliculas </button>
                 </div>
                 <section className='card-container'>
                     {this.state.dataPelicula.map((unPelicula, idx) => <PeliculaCard key={unPelicula + idx} data={unPelicula} image={unPelicula.poster_path} title={unPelicula.title} descripcion={unPelicula.overview} />)}

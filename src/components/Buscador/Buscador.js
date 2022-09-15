@@ -37,7 +37,7 @@ class Buscador extends Component{
 render(){
     return(
         <form onSubmit={(event)=>this.evitarSubmit(event)}> 
-        <input placeholder='Search' onChange={(event)=> this.guardarValue(event)} value={this.state.value}/>
+        <input className="filtro" placeholder='Search' onChange={(event)=> this.guardarValue(event)} value={this.state.value}/>
         <label className='radio-button'>Movies</label>
         <input  onChange={(event)=> this.cambioSerieButton(event)}  type="radio" name="media" value="movie" checked/>
 

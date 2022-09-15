@@ -24,6 +24,11 @@ body{
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
 }
 
+.filtro{
+    border: 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
 
 .button-54 {
     font-family: "Open Sans", sans-serif;
@@ -41,7 +46,23 @@ body{
     -webkit-user-select: none;
     touch-action: manipulation;
   }
-
+  .button-55 {
+    margin-top: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
   .radio-button{
     color: white;
   }

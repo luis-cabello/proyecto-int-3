@@ -21,7 +21,7 @@ class Filtro extends Component {
   render() {
     return (
       <form onSubmit={(e) => this.evitarRefresh(e)}>
-        <input type={'text'} onChange={(e)=> this.guardarCambios(e)} value={this.state.valor} placeholder ='Buscador' />
+        <input className="filtro" type={'text'} onChange={(e)=> this.guardarCambios(e)} value={this.state.valor} placeholder ='Buscador' />
       </form>
     )
   }
