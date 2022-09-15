@@ -14,7 +14,7 @@ class Buscador extends Component{
         this.props.buscar()
        
     
-    }
+    };
 
     cambioSerieButton(event) {
         if(event.target.value === 'movie') {
@@ -26,18 +26,24 @@ class Buscador extends Component{
                 movie: false
             })
         }
-    }
+    };
+
+    guardarValue(event){
+        this.setState({
+            value: event.target.value, 
+        })
+    };
 
 render(){
     return(
         <form onSubmit={(event)=>this.evitarSubmit(event)}> 
-        <input placeholder='Search' />
+        <input placeholder='Search' onChange={(event)=> this.guardarValue(event)} value={this.state.value}/>
         <label className='radio-button'>Movies</label>
         <input  onChange={(event)=> this.cambioSerieButton(event)}  type="radio" name="media" value="movie" checked/>
 
         <label className='radio-button'>Series</label>
         <input onChange={(event)=> this.cambioSerieButton(event)}  type="radio" name="media" value="serie" />
-        <button type="submit" className="button-54"  onChange={(e)=>this.props.buscar(e)}>  Buscar  </button>
+        <button type="submit" className="button-54"  onClick={()=>this.props.buscar(this.state.movie , this.state.value)}>  Buscar  </button>
         </form>
     )
 }
