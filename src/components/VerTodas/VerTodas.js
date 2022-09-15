@@ -10,8 +10,7 @@ class VerTodas extends Component {
             dataPelicula: [],
             nextUrl : 1,
             dataSeries: [],
-            backup: [],
-            backupSeries: [], 
+         
             
            
         }
@@ -40,8 +39,7 @@ class VerTodas extends Component {
         fetch("https://api.themoviedb.org/3/tv/popular?api_key=7a176cc95147be6e695be2faf0e8ff9c ")
             .then(response => response.json())
             .then(data => this.setState(
-                { dataSeries: data.results, 
-                backupSeries: data.results}
+                { dataSeries: data.results}
             ))
             .catch(error => console.log('el error fue ' + error))
 
@@ -74,7 +72,7 @@ class VerTodas extends Component {
     
     filtrarPelicula(nombre) {
         let arrayFiltrado =
-        this.state.backup.filter(pelicula => pelicula.title.toLowerCase().includes(nombre.toLowerCase()))
+        this.state.dataPelicula.filter(pelicula => pelicula.title.toLowerCase().includes(nombre.toLowerCase()))
         
         this.setState({
             dataPelicula: arrayFiltrado
@@ -85,7 +83,7 @@ class VerTodas extends Component {
     
     filtrarSeries(nombre) {
         let arrayFiltrado =
-        this.state.backupSeries.filter(serie => serie.name.toLowerCase().includes(nombre.toLowerCase()))
+        this.state.dataSeries.filter(serie => serie.name.toLowerCase().includes(nombre.toLowerCase()))
                 
                 this.setState({
                     dataSeries: arrayFiltrado
