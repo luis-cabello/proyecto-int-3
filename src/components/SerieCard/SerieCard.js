@@ -21,34 +21,48 @@ class SerieCard extends Component{
         }
       }
 
-agregarYQuitarDeFavoritos(id){
-    // Tiene que agregar un id dentro de un Array y guardarlo en localstorgae
-    // Si el id ya existe ofrecer al usarlo la posibilidad de quitar el id del array de favoritos
-    let favoritos = [];
-    let recuperoStorage = localStorage.getItem('favoritos')
+      componentDidMount(){
+        let recuperoStorage = localStorage.getItem('favoritosSeries');
+        let favoritos = JSON.parse(recuperoStorage);
 
-    if(recuperoStorage !== null){
-        let favoritosToArray = JSON.parse(recuperoStorage)
-        favoritos = favoritosToArray
+        if (favoritos !== null ){
+            if (favoritos.includes(this.props.data.id)) {
+                this.setState({
+                    favsMessage: 'Quitar de favoritos'
+                })
+            }
+        }
+
     }
 
-    if(favoritos.includes(id)){
-    favoritos = favoritos.filter(unId => unId !== id)
-    this.setState ({
-        favsMessage: 'Quitar de favoritos'
-    })
-    } else {
-        favoritos.push(id);
-        this.setState ({
-            favsMessage: 'Agregar a favoritos'
-        })
+      agregarYQuitarDeFavoritos(id) {
+        // Tiene que agregar un id dentro de un Array y guardarlo en localstorgae
+        // Si el id ya existe ofrecer al usarlo la posibilidad de quitar el id del array de favoritos
+        let favoritos = [];
+        let recuperoStorage = localStorage.getItem('favoritosSeries') //Hay algo en localStorage?
+
+        if (recuperoStorage !== null) { //Si hay algo disinto de null osea hay algo en favoritos
+            let favoritosToArray = JSON.parse(recuperoStorage) // Devolvemelo y pasalo a JSON
+            favoritos = favoritosToArray //lo guardamos en el array 
+        }
+
+        if (favoritos.includes(id)) { //Si el id que se encontro arriba esta incluido en el  Array
+            favoritos = favoritos.filter(unId => unId !== id) // Agarra el array si matchea con el id que el usaurio eligio, se cambia el estado a Quitar 
+            this.setState({
+                favsMessage: 'Agregar a favoritos '
+            })
+        } else {
+            favoritos.push(id); //Si no esta en el array se va a cambiar el estado a agregar. 
+            this.setState({
+                favsMessage: 'Quitar de favoritos'
+            })
+        }
+
+        let favsAsString = JSON.stringify(favoritos);
+        localStorage.setItem("favoritosSeries", favsAsString)
+        console.log(localStorage);
+
     }
-
-    let favsAsString = JSON.stringify(favoritos);
-    localStorage.setItem("favoritos", favsAsString)
-    console.log(localStorage);
-
-}
     render(){
         return(
         <article className='character-card'>

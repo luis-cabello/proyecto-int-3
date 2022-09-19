@@ -22,7 +22,7 @@ class PeliculaCard extends Component {
       }
 
     componentDidMount(){
-        let recuperoStorage = localStorage.getItem('favoritos');
+        let recuperoStorage = localStorage.getItem('favoritosPelis');
         let favoritos = JSON.parse(recuperoStorage);
 
         if (favoritos !== null ){
@@ -39,7 +39,7 @@ class PeliculaCard extends Component {
         // Tiene que agregar un id dentro de un Array y guardarlo en localstorgae
         // Si el id ya existe ofrecer al usarlo la posibilidad de quitar el id del array de favoritos
         let favoritos = [];
-        let recuperoStorage = localStorage.getItem('favoritos') //Hay algo en localStorage?
+        let recuperoStorage = localStorage.getItem('favoritosPelis') //Hay algo en localStorage?
 
         if (recuperoStorage !== null) { //Si hay algo disinto de null osea hay algo en favoritos
             let favoritosToArray = JSON.parse(recuperoStorage) // Devolvemelo y pasalo a JSON
@@ -59,7 +59,7 @@ class PeliculaCard extends Component {
         }
 
         let favsAsString = JSON.stringify(favoritos);
-        localStorage.setItem("favoritos", favsAsString)
+        localStorage.setItem("favoritosPelis", favsAsString)
         console.log(localStorage);
 
     }

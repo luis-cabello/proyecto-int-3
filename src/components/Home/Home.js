@@ -61,7 +61,6 @@ class Home extends Component {
 
     
     render() {
-        console.log(this.state.resultadosBusqueda)
         return (
 
             <React.Fragment>
