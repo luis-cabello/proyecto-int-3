@@ -11,9 +11,7 @@ class Buscador extends Component{
 
     evitarSubmit(event){
         event.preventDefault();
-        this.props.buscar()
-       
-    
+
     };
 
     cambioSerieButton(event) {

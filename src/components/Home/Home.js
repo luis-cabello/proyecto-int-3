@@ -3,13 +3,16 @@ import Buscador from "../Buscador/Buscador";
 import PeliculaCard from "../PeliculaCard/PeliculaCard";
 import SerieCard from "../SerieCard/SerieCard";
 
+
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
             dataPelicula: [],
             dataSeries: [],
-            resultadosBusqueda : []
+            resultadosBusqueda : [],
+            busqueda : false,
+            textSearch : ''
         }
     }
 
@@ -55,9 +58,13 @@ class Home extends Component {
             .catch(err => console.log(err))
         }
     }
-
-
-
+    clear() {
+        this.setState({
+            resultadosBusqueda : [],
+            busqueda: false,
+            textSearch: '',
+        })
+    };
 
     
     render() {
@@ -67,6 +74,7 @@ class Home extends Component {
 
                 <div>
                    <Buscador buscar = {(movie,textSearch)=> this.buscarPeli(movie,textSearch) }/>
+                   <button  className = "button-54"type='button' onClick={() => this.clear()}>Clear Search</button>
                     <h2 className="TituloC">Movies</h2>
                 </div>
 

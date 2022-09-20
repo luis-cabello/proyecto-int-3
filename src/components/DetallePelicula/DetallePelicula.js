@@ -12,7 +12,9 @@ class detallePelicula extends Component{
         this.state ={
             favsMessage: 'Agregar a favoritos',
             id: this.props.match.params.id,
-            dataPelicula: {},
+            dataPelicula: {
+                genres : []
+            },
         }
     }
 
@@ -84,7 +86,11 @@ class detallePelicula extends Component{
                     <p className="letrablanca"> Descripcion : {this.state.dataPelicula.overview}</p>
                     <p className="letrablanca"> Voto promedio de los espectadores : {this.state.dataPelicula.vote_average}</p>
                     <p className="letrablanca"> Fecha de lanzamiento : {this.state.dataPelicula.release_date}</p>
-                    <p className="letrablanca"> Genero : {this.state.dataPelicula.genre_ids}</p>
+                    <p className="letrablanca"> Genero : 
+                                {
+                                    this.state.dataPelicula.genres.map((oneGenre, idx) => <li  key={oneGenre.id + idx}>{oneGenre.name}</li>)
+                                }</p>
+                     
                     <button className="button-54" onClick={() => this.agregarYQuitarDeFavoritos(parseInt(this.state.id))}> {this.state.favsMessage} </button>
                 </article>
                 </section>
